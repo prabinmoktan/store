@@ -1,0 +1,51 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+input:focus{
+  border: none;
+  
+}
+
+h5{
+  position: absolute;
+  /* z-index: 10; */
+  /* bottom: 0; */
+  /* transform: translateY(50%); */
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: 0.3s ease-in;
+  overflow: hidden;
+  
+}
+
+
+.card:hover{
+  transform: scale(1.1);
+}
+.card{
+  transition: 0.3s ease;
+}
+.textbody{
+  top: 100px;
+  left: 50px;
+  
+}
+.explore{
+  text-align: center;
+  border: 2px solid black;
+  color: black;
+  margin-left: 100px;
+  margin-top: 100px;
+  offset: inherit;
+  width: 50px;
+  height: auto;
+  font-size: 25px;
+  
+}
+
+.explore:hover{
+  background: #000;
+  color: white;
+  transition: 0.5s ease;
+} 
