@@ -11,7 +11,7 @@ const SingleProduct = () => {
 
     const getSingleData = async(id) => {
       const response= await singleData(id);
-      console.log(response);
+      
       setProd(response);
     }
     useEffect(() => {
@@ -46,7 +46,7 @@ const SingleProduct = () => {
             />
           </Col>
         </Row>
-        <div className="text-center mt-4">
+        <div className="text-center mt-4 ms-5">
         <button onClick={goToHandler} className="btn btn-primary p-2 rounded ">Go To Home</button>
         </div>
       </Container>

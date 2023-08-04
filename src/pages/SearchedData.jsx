@@ -3,13 +3,17 @@ import Navbar from '../components/Navbar'
 
 const SearchedData = () => {
   const [product, setProduct] = useState([]);
+  
 
   useEffect(()=>{
     const localItem =localStorage.getItem("items");
-    // const localItem = localStorage.getItem("items") ? JSON.parse(localStorage.getItem("items")) : null      
-    console.log("localItem", JSON.parse(localItem))
+    // const localItem = localStorage.getItem("items") ? JSON.parse(localStorage.getItem("items")) : null  
     setProduct(JSON.parse(localItem));
-  },[])
+  },[product])
+
+  // useEffect(()=>{
+    
+  // },[items])
 
   return (
     <>
@@ -30,10 +34,16 @@ const SearchedData = () => {
             <h5 className="card-title">{prods.title}</h5>
           </div>
   
-          <div className="card-body">
+          <div className="card-body ">
             
-            <h3 className="mt-2">${prods.price}</h3>
-            <p className="card-text">{prods.description}</p>
+            <h3 className="mt-5">${prods.price}</h3>
+            <p className="card-text">{prods.description.slice(0,80)+"..."}</p>
+            <button
+            className="btn btn-primary align-items-center ms-5"
+            onClick={() => viewProducthandler(prods.id)}
+          >
+            View Product
+          </button>
             
           </div>
         </div>)

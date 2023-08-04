@@ -9,15 +9,3 @@ Currently, two official plugins are available:
 
 
 
-const inputHandler = async(value) => {
-      
-    
-    // setSearchKey(value);
-    const prod = await getData(value);
-    localStorage.setItem('products',JSON.stringify(prod));
-    if(window.location.pathname == '/search') window.location.reload();
-    else navigate('/search')
-    
-    console.log(window.location.pathname)
-   
-  };

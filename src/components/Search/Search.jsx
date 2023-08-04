@@ -11,8 +11,8 @@ const Search = () => {
   const [product, setProduct] = useState([]);
   const navigate = useNavigate();
 
-  const getData = (value) => {
-    fetch("https://fakestoreapi.com/products")
+  const getData = async(value) => {
+    return await fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
       .then((json) => {
         const results = json.filter((prod) => {
@@ -23,8 +23,8 @@ const Search = () => {
             prod.title.toLowerCase().includes(value)
           );
         });
-        console.log(results);
         setProduct(results);
+        return results;
       });
   };
 
@@ -36,22 +36,11 @@ const Search = () => {
     
   };
 
-  const searchHandler =(value) => {
-    setSearchKey(value);
-    const prod = getData(value);
-    if(localStorage.setItem("items", JSON.stringify(prod)) != null){
-      console.log("items", Json.stringify(prod))
+  const searchHandler = async() => {
+    // setSearchKey(value);
+    const prod =  await getData(searchKey);
+    localStorage.setItem("items", JSON.stringify(prod))
     navigate("/search")
-    }
-    else{
-      alert('please add items to card')
-    }
-    
-    
-    
-    
-    //  console.log(window.location.pathname)
-   
 
   }
 
@@ -69,7 +58,7 @@ const Search = () => {
         />
         <button
           className=" border-0 mb-2 p-1 me-2 bg-white"
-          onClick={(e) => searchHandler(e.target.value)}
+          onClick={() => searchHandler()}
           value={searchKey}
         >
           <BsSearch />
