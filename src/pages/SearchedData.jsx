@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import Navbar from '../components/Navbar'
+import { useNavigate } from 'react-router-dom';
+
 
 const SearchedData = () => {
   const [product, setProduct] = useState([]);
-  
+  const navigate = useNavigate()
 
   useEffect(()=>{
     const localItem =localStorage.getItem("items");
@@ -11,14 +12,17 @@ const SearchedData = () => {
     setProduct(JSON.parse(localItem));
   },[product])
 
-  // useEffect(()=>{
+ 
+  const viewProducthandler = (id) => {
+    event.preventDefault();
     
-  // },[items])
-
+    navigate(`/products/${id}`);
+  };
   return (
     <>
-    <Navbar/>
-    <div className='d-flex justify-content-between container mt-5 flex-wrap'>
+    
+    <div className='d-flex justify-content-between container  flex-wrap'>
+      
     {
       product.length > 0 && 
       product.map((prods) => {

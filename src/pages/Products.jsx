@@ -23,7 +23,8 @@ const Products = () => {
   return (
     
    <>
-   <h1 className='d-flex justify-content-center mt-4'>Trending Pages</h1>
+   <div className='bg-black h-100 p-5'>
+   <h1 className='d-flex justify-content-center text-white '>Trending Pages</h1>
     
     {/* <p>trending page</p> */}
    
@@ -35,6 +36,7 @@ const Products = () => {
         return (<ProductCard key={prods.id} prods={prods}/>)
     })
    }
+   </div>
    </div>
    
    </>

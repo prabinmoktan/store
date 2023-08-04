@@ -7,7 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 const Footer = () => {
   return (
     <>
-      <div className="mt-5 border-top bg-black  bottom-0 text-white "  >
+      <div className=" border-top bg-black  text-white "  >
         <div className=" m-auto mt-4 mb-1 container d-flex justify-content-between "  style={{height:"20em"}}  >
           <div className="w-25 d-flex"  >
             <img src={w} alt="" className="h-50" />
